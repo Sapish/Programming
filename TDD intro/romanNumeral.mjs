@@ -34,6 +34,10 @@ function romanNumeralConverter(nInt) {
             output += "XC";
             diff = 90;
         }
+        else if (nInt >= 73) {
+            output += "LXXIII";
+            diff = 73;
+        }
         else if (nInt >= 50) {
             output += "L";
             diff = 50;
