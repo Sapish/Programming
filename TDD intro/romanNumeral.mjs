@@ -26,5 +26,4 @@ function romanNumeralConverter(nInt) {
 
 }
 
-//test
 export default romanNumeralConverter
