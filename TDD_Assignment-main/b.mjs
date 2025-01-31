@@ -18,7 +18,7 @@ import test from "./test.mjs";
 */
 
 //#region function -----------------------------------------------------------------
-// Write your function her.
+
 function formatName(name) {
     if(typeof name !== 'string')
         return null;
@@ -33,8 +33,11 @@ function formatName(name) {
 
 
 //#region Tests --------------------------------------------------------------------
-// Write your tests her.
+const tests = test("Test for formatName function")
 
+tests.isEqual(formatName(1337), null, "The input should return null");
+tests.isEqual(formatName([]), null, "An array should return null");
+tests.isEqual(formatName(false), null, "Boolean should return null");
 
 
 //#endregion
