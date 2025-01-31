@@ -46,7 +46,8 @@ tests.isNotANumber(multiply(undefined, 6), 'The sum of undefined and 6 should re
 tests.isNotANumber(multiply(null, 6), 'The sum of null and 6 should return NaN');
 tests.isNotANumber(multiply("x", 3, 6), 'The sum of x, 3 and 6 should return NaN');
 
-
-
+tests.isNotANumber(multiply("6", 6), 36, 'The sum of "6" and 6 should return 36');
+tests.isNotANumber(multiply("4", "4"), 16, 'The sum of 4 times 4 should return 16');
+tests.isNotANumber(multiply("4.5", "2"), 9, 'The sum of 4.5 times 2 should return 9');
 
 //#endregion
