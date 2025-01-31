@@ -38,10 +38,10 @@ function multiply(...numbers) {
 //#endregion
 
 
-
-
-
 //#region Tests --------------------------------------------------------------------
+const tests = test("Test for multiplication");
+
+tests.isNotANumber(multiply("x", 5), 'The sum of x and 5 should return NaN');
 
 
 
