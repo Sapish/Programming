@@ -24,11 +24,10 @@ function multiply(...numbers) {
     }
     let multipledValue = 1;
     for (const num of numbers) {
-        const parsedNum = Number(num);
-        if (Number.isNaN(parsedNum)) {
+        if (num === null || num === undefined || Number.isNaN(Number(num))) {
             return NaN;
         }
-        multipledValue *= parsedNum;
+        multipledValue *= Number(num);
     }
     return multipledValue;
 }
