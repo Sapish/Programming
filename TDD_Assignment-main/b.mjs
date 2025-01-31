@@ -24,6 +24,11 @@ function formatName(name) {
         return null;
 }
 
+const trimmedName = name.trim();
+
+if (trimmedName === "") {
+    return "";
+}
 
 
 //#endregion
