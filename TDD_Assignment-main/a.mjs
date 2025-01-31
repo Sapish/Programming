@@ -42,6 +42,9 @@ function multiply(...numbers) {
 const tests = test("Test for multiplication");
 
 tests.isNotANumber(multiply("x", 5), 'The sum of x and 5 should return NaN');
+tests.isNotANumber(multiply(undefined, 6), 'The sum of undefined and 6 should return NaN');
+tests.isNotANumber(multiply(null, 6), 'The sum of null and 6 should return NaN');
+tests.isNotANumber(multiply("x", 3, 6), 'The sum of x, 3 and 6 should return NaN');
 
 
 
