@@ -49,5 +49,12 @@ tests.isNotANumber(multiply("x", 3, 6), 'The sum of x, 3 and 6 should return NaN
 tests.isEqual(multiply("6", 6), 36, 'The sum of "6" and 6 should return 36');
 tests.isEqual(multiply("4", "4"), 16, 'The sum of 4 times 4 should return 16');
 tests.isEqual(multiply("4.5", "2"), 9, 'The sum of 4.5 times 2 should return 9');
+tests.isEqual(multiply("3", "2", "2"), 12, 'The sum of 3 times 2 times 2 should return 12');
+
+tests.isEqual(multiply(Infinity, 6), Infinity, 'The sum of infinity and 6 should return infinity');
+tests.isEqual(multiply(-Infinity, 6), -Infinity, 'The sum of -infinity and 6 should return -infinity');
+tests.isEqual(multiply(-Infinity, -6), Infinity, 'The sum of -infinity and -6 should return infinity');
+tests.isEqual(multiply(-Infinity, -Infinity), Infinity, 'The sum of -infinity and -infinity should return infinity');
+tests.isEqual(multiply(Infinity, Infinity), Infinity, 'The sum of infinity and infinity should return infinity');
 
 //#endregion
