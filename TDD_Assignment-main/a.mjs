@@ -57,4 +57,11 @@ tests.isEqual(multiply(-Infinity, -6), Infinity, 'The sum of -infinity and -6 sh
 tests.isEqual(multiply(-Infinity, -Infinity), Infinity, 'The sum of -infinity and -infinity should return infinity');
 tests.isEqual(multiply(Infinity, Infinity), Infinity, 'The sum of infinity and infinity should return infinity');
 
+tests.isEqual(multiply(0, 6), 0, 'The sum of 0 and 6 should return 0');
+tests.isEqual(multiply(6, 0), 0, 'The sum of 6 and 0 should return 0');
+tests.isEqual(multiply(0, 0), 0, 'The sum of 0 and 0 should return 0');
+tests.isNotANumber(multiply(NaN, 6), 'The sum of NaN and 6 should return NaN');
+tests.isNotANumber(multiply(6, NaN), 'The sum of 6 and NaN should return NaN');
+tests.isNotANumber(multiply(), 'The sum of nothing should return NaN');
+
 //#endregion
