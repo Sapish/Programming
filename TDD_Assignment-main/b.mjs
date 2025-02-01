@@ -84,6 +84,4 @@ tests.isEqual(formatName("JOHN DOE"), "John Doe", "The first letter in first and
 tests.isEqual(formatName("joHn DOE"), "John Doe", "The first letter in first and last name should be uppercase");
 tests.isEqual(formatName("john doe"), "John Doe", "The first letter in first and last name should be uppercase");
 
-
-
 //#endregion
