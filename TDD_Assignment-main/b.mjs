@@ -38,6 +38,17 @@ function formatName(name) {
             return null;
         }
     }
+    const lowerCaseName = trimmedName.toLowerCase();
+    const words = lowerCaseName.split(' ');
+    const capitalizeWords = [];
+
+    for (let i = 0; i < words.length; i++) {
+        const word = words[i];
+        const capitalizeWord = word.charAt(0).toUpperCase() + word.slice(1);
+        capitalizeWords.push(capitalizeWord);
+    }
+    const formattedName = capitalizeWords.join(' ');
+    return formattedName;
 }
 
 
@@ -54,7 +65,7 @@ tests.isEqual(formatName(1337), null, "The input should return null");
 tests.isEqual(formatName([]), null, "An array should return null");
 tests.isEqual(formatName(false), null, "Boolean should return null");
 
-tests.isEqual(formatName("   john doe   "), "john doe", "leading or trailing spaces should be removed");
+tests.isEqual(formatName("   john doe   "), "John Doe", "leading or trailing spaces should be removed");
 tests.isEqual(formatName("john doe  "), "John Doe", "trailing spaces should be removed");
 tests.isEqual(formatName("   john doe"), "John Doe", "leading spaces should be removed");
 
