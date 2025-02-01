@@ -58,7 +58,13 @@ tests.isEqual(formatName("   john doe   "), "john doe", "leading or trailing spa
 tests.isEqual(formatName("john doe  "), "John Doe", "trailing spaces should be removed");
 tests.isEqual(formatName("   john doe"), "John Doe", "leading spaces should be removed");
 
-
+tests.isEqual(formatName("john@doe"), null, "if @ is included then return null");
+tests.isEqual(formatName("john!doe"), null, "if ! is included then return null");
+tests.isEqual(formatName("john-doe"), null, "if - is included then return null");
+tests.isEqual(formatName("|johndoe|"), null, "if | is included then return null");
+tests.isEqual(formatName("?????johndoe"), null, "if ? is included then return null");
+tests.isEqual(formatName("john { doe ]"), null, "if { or ] is included then return null");
+tests.isEqual(formatName("john doe1337"), "John Doe1337", "if 1337 is included then it will be formatted and allowed");
 
 
 //#endregion
