@@ -77,5 +77,13 @@ tests.isEqual(formatName("?????johndoe"), null, "if ? is included then return nu
 tests.isEqual(formatName("john { doe ]"), null, "if { or ] is included then return null");
 tests.isEqual(formatName("john doe1337"), "John Doe1337", "if 1337 is included then it will be formatted and allowed");
 
+tests.isEqual(formatName(""), "", "An empty string should return an empty string");
+
+tests.isEqual(formatName("john doe"), "John Doe", "The first letter in first and last name should be uppercase");
+tests.isEqual(formatName("JOHN DOE"), "John Doe", "The first letter in first and last name should be uppercase");
+tests.isEqual(formatName("joHn DOE"), "John Doe", "The first letter in first and last name should be uppercase");
+tests.isEqual(formatName("john doe"), "John Doe", "The first letter in first and last name should be uppercase");
+
+
 
 //#endregion
