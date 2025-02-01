@@ -20,14 +20,24 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 
 function formatName(name) {
-    if(typeof name !== 'string')
+    if(typeof name !== 'string') {
         return null;
-}
+    }
 
-const trimmedName = name.trim();
+    const trimmedName = name.trim();
+    
+    if (trimmedName === "") {
+        return "";
+    }
 
-if (trimmedName === "") {
-    return "";
+    const allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 '";
+
+    for (let i = 0; i < trimmedName.length; i++) {
+        const char = trimmedName[i];
+        if (!allowedChars.includes(char)) {
+            return null;
+        }
+    }
 }
 
 
@@ -44,9 +54,11 @@ tests.isEqual(formatName(1337), null, "The input should return null");
 tests.isEqual(formatName([]), null, "An array should return null");
 tests.isEqual(formatName(false), null, "Boolean should return null");
 
-tests.isEqual(formatName("   john doe   "), "John Doe", "leading or trailing spaces should be removed");
+tests.isEqual(formatName("   john doe   "), "john doe", "leading or trailing spaces should be removed");
 tests.isEqual(formatName("john doe  "), "John Doe", "trailing spaces should be removed");
 tests.isEqual(formatName("   john doe"), "John Doe", "leading spaces should be removed");
+
+
 
 
 //#endregion
