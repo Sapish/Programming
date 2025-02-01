@@ -13,7 +13,6 @@ import test from "./test.mjs";
 function sequence(n) {
     if (typeof n !== 'number' || n < 0 || !Number.isInteger(n)) {
         return null;
-    }
 }
 
 if (n === 0) {
@@ -21,6 +20,17 @@ if (n === 0) {
 }
 if (n === 1 || n === 2) {
     return 1;
+}
+
+let current = 1;
+let previous = 1;
+
+for (let i = 3; i <= n; i++) {
+    let next = current + previous;
+    previous = current;
+    current = next;
+    }
+    return current;
 }
 //#region Tests --------------------------------------------------------------------
 const tests = test("Sum function");
