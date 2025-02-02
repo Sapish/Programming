@@ -24,7 +24,9 @@ import test from "./test.mjs";
 // Write your function her.
 
 function guessNumber(target, guess) {
-
+    if (Number.isInteger(target) === false || Number.isInteger(guess) === false) {
+        return null;
+    }
 }
 
 
