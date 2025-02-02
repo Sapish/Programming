@@ -27,9 +27,16 @@ function guessNumber(target, guess) {
     if (Number.isInteger(target) === false || Number.isInteger(guess) === false) {
         return null;
     }
+
+
+if (guess < target) {
+    return "Too Low";
+}else if (guess > target) {
+    return "Too High";
+}else {
+    return "Correct!";
+    }
 }
-
-
 //#endregion
 
 //#region Tests --------------------------------------------------------------------
